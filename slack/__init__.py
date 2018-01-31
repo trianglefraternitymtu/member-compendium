@@ -9,15 +9,15 @@ from . import onboarding
 # from . import soberdrive
 
 commands = [
-    path('coe', coe.command)
+    path('coe', coe.command),
     # path('onboarding', onboarding.process, name="slack-onboarding")
 ]
 
 entrypoints = [
-    # path('auth', auth.entry, name='slack-auth'),
+    path('auth', auth.entry, name='slack-auth'),
     # path('actions', actions.entry, name='slack-action'),
     # path('actions/external', actions.external_entry, name='slack-external-action'),
-    # path('events', events.entry, name='slack-external-action'),
+    # path('events', events.entry, name='slack-events'),
     # path('webhook/<nonce>', webhooks.entry, name='slack-webhook'),
 
     path('commands/', include(commands))
