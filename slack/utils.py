@@ -12,6 +12,15 @@ def error_msg(msg):
         'text' : msg
     }
 
+def filter_header(metadata):
+    if "HTTP_X_SLACK_RETRY_NUM" in metadata:
+        logger.info("Received a retry request.")
+        if metadata["HTTP_X_SLACK_RETRY_REASON"] != "http_timeout":
+            logger.warning('Reason for retry was "{}"'.format(metadata["HTTP_X_SLACK_RETRY_REASON"]))
+        return True
+
+    return False
+
 def filter_command(request):
     """
     Processes commands from a slash command.
@@ -30,10 +39,7 @@ def filter_command(request):
         logger.warning("Token verification failed. ({})".format(token))
         return HttpResponse(status=401)
 
-    if "HTTP_X_SLACK_RETRY_NUM" in request.META:
-        logger.info("Received a retry request.")
-        if request.META["HTTP_X_SLACK_RETRY_REASON"] != "http_timeout":
-            logger.warning('Reason for retry was "{}"'.format(request.META["HTTP_X_SLACK_RETRY_REASON"]))
+    if filter_header(request.META):
         return HttpResponse(status=200)
 
     return None
