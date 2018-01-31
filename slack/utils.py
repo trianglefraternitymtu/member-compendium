@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 import os, logging
 
+logger = logging.getLogger('basicLogger')
+
 def verified_token(token):
     app_verification_token = os.environ.get('SLACK_VERIFICATION_TOKEN')
     return app_verification_token == token
@@ -26,7 +28,6 @@ def filter_command(request):
     Processes commands from a slash command.
     https://api.slack.com/slash-commands
     """
-    logger = logging.getLogger('basicLogger')
     logger.debug(request.POST)
 
     if request.POST.get('ssl_check') == '1':
