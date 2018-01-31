@@ -1,5 +1,5 @@
 {
-  "name": "Member Compendium",
+  "name": "Membership Compendium",
   "description": "",
   "repository": "https://github.com/trianglefraternitymtu/member-compendium",
   "website": "https://github.com/trianglefraternitymtu/member-compendium",
@@ -11,6 +11,12 @@
       "DJANGO_SECRET_KEY": {
           "description": "Django's SECRET_KEY setting",
           "generator": "secret"
+      },
+      "SLACK_API_TOKEN": {
+        "description": "Slack OAuth Access Token",
+      },
+      "BOT_API_TOKEN":{
+        "description": "Bot User OAuth Access Token",
       },
       "SLACK_CLIENT_ID": {
           "description": "Slack App Client ID"

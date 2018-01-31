@@ -14,5 +14,6 @@ services:
       - db
     environment:
       DATEBASE_URL: postgres://postgres@db
+      DEBUG_MODE: 1
     env_file:
       - ./.env
