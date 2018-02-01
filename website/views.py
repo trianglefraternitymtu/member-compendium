@@ -10,4 +10,12 @@ def signin(request):
 
 def dashboard(request):
     logger.info("Rendering Dashboard")
-    return render(request, 'base.html')
+    return render(request, 'dashboard.html')
+
+def soberdrive(request):
+    logger.info("Rendering Sober Drive page")
+    return render(request, 'soberdrive.html')
+
+def dinner(request):
+    logger.info("Rendering Chapter Dinner page")
+    return render(request, 'dinner.html')

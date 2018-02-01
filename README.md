@@ -8,6 +8,9 @@ Supported Tools:
 - [ ] Chapter Dinner Organizer
 - [ ] New member on-boarding
 - [ ] Easier Webhooks
+- [ ] Roster
+  - [ ] Seniority Points
+  - [ ] Member Status
 - [x] Triangle Code of Ethics
 
 ## Creating your own
