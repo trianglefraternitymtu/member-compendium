@@ -32,7 +32,7 @@ def command(request):
 
     try:
         ethic = int(args[0])
-    except ValueError:
+    except (ValueError, IndexError):
         logger.info('Invalid ethic selected, returning all of them.')
         return JsonResponse({"attachments":all_ethics})
 
