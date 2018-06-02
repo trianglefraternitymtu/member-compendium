@@ -18,6 +18,9 @@
       "BOT_API_TOKEN":{
         "description": "Bot User OAuth Access Token",
       },
+      "BOT_USER_ID":{
+        "description": "Bot User ID",
+      },
       "SLACK_CLIENT_ID": {
           "description": "Slack App Client ID"
       },

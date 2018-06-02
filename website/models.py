@@ -28,8 +28,12 @@ class Member(models.Model):
     initiated = models.DateField()
     seniority_points = models.PositiveIntegerField(default=0)
     pin = models.PositiveIntegerField(default=0)
-    # pledge_father = models.ForeignKey('self', on_delete=models.CASCADE)
+
+class DriveShift(models.Model):
+    driver = models.ForeignKey(Member, on_delete=models.CASCADE)
+    shift = models.DateTimeField()
+    duration = models.DurationField()
 
 class Webhook(models.Model):
-    nonce = models.CharField(editable=False, primary_key=True, unique=True, max_length=128)
+    nonce = models.CharField(editable=False, primary_key=True, unique=True, max_length=36)
     channel = models.CharField(max_length=21)

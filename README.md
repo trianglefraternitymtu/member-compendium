@@ -23,6 +23,20 @@ If you're looking to adopt this for your organization, you should fork this repo
 
 ## Development
 
+After cloning this repository locally, one the first things your going to need to do in order to be able to run it is to create an `.env` file.
+
+The following variables need to be populated in order to run the application locally. If you have something deployed already, it's probably best to just use the same values from the server environment.
+
+Variable|Purpose
+:---:|:---:
+DJANGO_SECRET_KEY|Secret used by Django
+SLACK_CLIENT_ID|The client ID that Slack uses to identify your application
+SLACK_CLIENT_SECRET|The secret that Slack has generated for your application. You can regenerate this value if you accidentally make it public, but you should make an effort to keep this private.
+SLACK_VERIFICATION_TOKEN|The message verification token that Slack has generated for your application. You can regenerate this value if you accidentally make it public, but you should make an effort to keep this private.
+SLACK_API_TOKEN|This is the Application API token that is generated for your application when it is installed onto your Slack team. This should be kept private.
+BOT_API_TOKEN|This is the Bot user API token that is generated for your application's bot user when it is installed onto your Slack team. This should be kept private.
+
+
 ### Environment Installation
 
 ### Docker Environment

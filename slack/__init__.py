@@ -5,11 +5,13 @@ from . import actions
 from . import events
 from . import coe
 from . import onboarding
+from . import webhooks
 # from . import dinner
 # from . import soberdrive
 
 commands = [
     path('coe', coe.command),
+    path('list-webhooks', webhooks.list),
     # path('onboarding', onboarding.process, name="slack-onboarding")
 ]
 
@@ -18,7 +20,7 @@ entrypoints = [
     # path('actions', actions.entry, name='slack-action'),
     # path('actions/external', actions.external_entry, name='slack-external-action'),
     path('events', events.entry, name='slack-events'),
-    # path('webhook/<nonce>', webhooks.entry, name='slack-webhook'),
+    path('webhook/<nonce>', webhooks.entry, name='slack-webhook'),
 
     path('commands/', include(commands))
 ]
